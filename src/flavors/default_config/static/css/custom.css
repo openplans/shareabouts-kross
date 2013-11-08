@@ -29,16 +29,36 @@ a:hover {
 -------------------------------------------------------------- */
 
 #site-header {
-/*  color: #fff;*/
-/*  background-color: #994c99;*/
+  color: #444;
+  background-color: #fff;
 }
-
-#site-header a, #site-header a:active, #site-header a:visited {
-/*  color: #ff80ff;*/
+#site-title {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  text-shadow: none;
 }
-
-#site-header a:hover {
-  /* color: #ffbfff; */
+#site-title a:link,
+#site-title a:visited {
+  font-size: 2em;
+  display: block;
+  height: 100%;
+  position: relative;
+  color: #444;
+}
+#site-title a:hover {
+  color: #000;
+}
+#site-logo {
+  height: 100%;
+  width: auto;
+  float: left;
+  position: absolute;
+  top: 0;
+  left: 0.25em;
+}
+#site-tagline {
+   display: none; 
+}
 }
 
 
@@ -50,9 +70,9 @@ a:hover {
  * as to not break it scaling via media queries. */
 
 #site-title {
-/*  font-family: Impact, sans-serif;*/
-/*  color: #fff;*/
-/*  text-shadow: none;*/
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  text-shadow: none;
 }
 
 #site-title a:link,

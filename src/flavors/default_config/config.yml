@@ -1,9 +1,9 @@
 # Settings for the app
 app:
   # HTML Title
-  title: Shareabouts
+  title: Make Brooklyn Safer
   # Header name
-  name: Shareabouts
+  name: Kids Rely On Safe Streets
   # Meta description that will show up in Google search results
   meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
 
@@ -18,23 +18,30 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: 39.9523524
-      lng: -75.1636075
-    zoom: 14
+      lat: 40.68948969132277
+      lng: -73.96614074707031
+    zoom: 15
     minZoom: 10
     maxZoom: 17
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: /static/data/philadelphia.geojson
+    - url: /static/data/precincts.geojson
       type: json
       rules:
-        - condition: 'true'
+        - condition: '{{Precinct}} === 88'
           style:
-            color: "#444"
+            color: "#fff"
             opacity: 0.6
-            fillOpacity: 0.2
+            fillOpacity: 0
             weight: 1
+        - condition: '{{Precinct}} !== 88'
+          style:
+            color: "#000"
+            opacity: 0.6
+            fillOpacity: 0.5
+            weight: 1
+
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
@@ -42,126 +49,116 @@ place_types:
   landmark:
     label: _(Landmark)
     rules:
-      - condition: '"{{location_type}}" === "landmark"'
-        # Display landmarks as icons
-
+      - condition: '"{{location_type}}" === "Traffic_does_not_yield"'
         icon:
           iconUrl: /static/css/images/markers/dot-0d85e9.png
-          iconSize:
-            width: 17
-            height: 18
+          iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
           iconUrl: /static/css/images/markers/marker-0d85e9.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize:
-            width: 25
-            height: 41
-          shadowSize:
-            width: 41
-            height: 41
+          iconSize: [17,18]
+          shadowSize: [17,18]
           iconAnchor: [12, 41]
-
-        # style:
-        #   color: '#0d85e9'
-        #   radius: 8
-        #   weight: 1
-        #   opacity: 0.9
-        #   fillOpacity: 0.4
-        # focus_style:
-        #   color: '#0d85e9'
-        #   radius: 16
-        #   weight: 1
-        #   opacity: 0.9
-        #   fillOpacity: 0.4
-
-  park:
-    label: _(Park)
-    rules:
-      - condition: '"{{location_type}}" === "park"'
-        # Show parks that are points as icons...
-
+      - condition: '"{{location_type}}" === "Bike_lane_blocked"'
         icon:
-          iconUrl: /static/css/images/markers/dot-4bbd45.png
-          iconSize:
-            width: 17
-            height: 18
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-4bbd45.png
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize:
-            width: 25
-            height: 41
-          shadowSize:
-            width: 41
-            height: 41
+          iconSize: [17,18]
+          shadowSize: [17,18]
           iconAnchor: [12, 41]
-
-        # ...and parks that are polygons as shapes.
-
-        style:
-          color: '#4bbd45'
-          radius: 8
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#4bbd45'
-          radius: 16
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
-  school:
-    label: _(School)
-    rules:
-      - condition: '"{{location_type}}" === "school" && {{submission_sets.comments.length}} > 0'
-        # Display schools as circles
-
-        # icon:
-        #   iconUrl: /static/css/images/markers/dot-f95016.png
-        #   iconSize:
-        #     width: 17
-        #     height: 18
-        #   iconAnchor: [9, 9]
-        # focus_icon:
-        #   iconUrl: /static/css/images/markers/marker-f95016.png
-        #   shadowUrl: /static/css/images/marker-shadow.png
-        #   iconSize:
-        #     width: 25
-        #     height: 41
-        #   shadowSize:
-        #     width: 41
-        #     height: 41
-        #   iconAnchor: [12, 41]
-
-        style:
-          color: '#f95016'
-          radius: 8
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-      - condition: '"{{location_type}}" === "school"'
-        style:
-          color: '#f95016'
-          radius: 8
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
+      - condition: '"{{location_type}}" === "No_bike_lane"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [17,18]
+          shadowSize: [17,18]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "Speeding_traffic"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [17,18]
+          shadowSize: [17,18]
+          iconAnchor: [12, 41]      
+      - condition: '"{{location_type}}" === "Not_enough_time_to_cross"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [17,18]
+          shadowSize: [17,18]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "Dangerous_crossing"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [17,18]
+          shadowSize: [17,18]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "Crosswalk_blocked"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [17,18]
+          shadowSize: [17,18]
+          iconAnchor: [12, 41]    
+      - condition: '"{{location_type}}" === "Crosswalk_needs_painting"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [17,18]
+          shadowSize: [17,18]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "Sidewalk_too_narrow"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [17,18]
+          shadowSize: [17,18]
+          iconAnchor: [12, 41]
+      - condition: '"{{location_type}}" === "Double_parked_cars"'
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17,18]
+          iconAnchor: [9, 9]
+        focus_icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [17,18]
+          shadowSize: [17,18]
+          iconAnchor: [12, 41]
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
@@ -171,13 +168,45 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Place)
+  add_button_label: _(Identify a problem)
   action_text: _(added)
-  title: _(Tell us more...)
-  action_text: _(created)
+  title: _(Describe the issue)
+  action_text: _(identified)
   anonymous_name: _(Someone)
-  submit_button_label: _(Submit)
+  submit_button_label: _(Share this report)
   items:
+    - prompt: _(Your name)
+      type: text
+      name: submitter_name
+      attrs:
+        - key: placeholder
+          value: _(Name)
+        - key: size
+          value: 30
+    - prompt: _(What is the problem here?)
+      type: select
+      name: location_type
+      options:
+        - label: _(Traffic does not yield)
+          value: Traffic_does_not_yield
+        - label: _(Bike lane blocked)
+          value: Bike_lane_blocked
+        - label: _(No bike lane)
+          value: No_bike_lane
+        - label: _(Speeding traffic)
+          value: Speeding_traffic
+        - label: _(Not enough time to cross)
+          value: Not_enough_time_to_cross
+        - label: _(Dangerous crossing)
+          value: Dangerous_crossing
+        - label: _(Crosswalk blocked)
+          value: Crosswalk_blocked
+        - label: _(Crosswalk needs painting)
+          value: Crosswalk_needs_painting
+        - label: _(Sidewalk too narrow)
+          value: Sidewalk_too_narrow
+        - label: _(Double parked cars/trucks)
+          value: Double_parked_cars
     - prompt: _(Location Name)
       type: text
       name: name
@@ -186,40 +215,20 @@ place:
           value: _(Location Name)
         - key: size
           value: 30
-    - prompt: _(Location Type)
-      type: select
-      options:
-        - label: _(Landmark)
-          value: landmark
-        - label: _(Park)
-          value: park
-        - label: _(School)
-          value: school
-      name: location_type
-    - prompt: _(Image)
-      inputfile_label: _(Add an Image)
+    - prompt: _(Tell us more)
+      type: textarea
+      name: description
+      attrs:
+        - key: placeholder
+          value: _(Optionally, tell us more about this location...)
+    - prompt: _(Share an image showing the problem)
+      inputfile_label: _(Add an image)
       type: file
       name: my_image
       optional: true
       attrs:
         - key: accept
           value: image/*
-    - prompt: _(Description)
-      type: textarea
-      name: description
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Description...)
-    - prompt: _(Your Name)
-      type: text
-      name: submitter_name
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Name)
-        - key: size
-          value: 30
 
 survey:
   submission_type: comments
@@ -255,15 +264,7 @@ pages:
     slug: about
     name: overview
     start_page: true
-
-  - title: _(Why Shareabouts?)
-    slug: why
-    url: /static/pages/why.html
-
-  - title: _(Features)
-    slug: features
-    url: /static/pages/features.html
-
-  - title: _(GitHub)
-    external: true
-    url: https://github.com/openplans/shareabouts
+    
+  - title: _(Resources)
+    slug: resources
+    name: features
