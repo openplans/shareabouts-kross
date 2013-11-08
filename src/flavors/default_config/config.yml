@@ -24,23 +24,11 @@ map:
     minZoom: 15
     maxZoom: 19
   layers:
-    - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/openplans.map-rme6ya29/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: /static/data/precincts.geojson
-      type: json
-      rules:
-        - condition: '{{Precinct}} === 88'
-          style:
-            color: "#fff"
-            opacity: 0.6
-            fillOpacity: 0
-            weight: 1
-        - condition: '{{Precinct}} !== 88'
-          style:
-            color: "#000"
-            opacity: 0.6
-            fillOpacity: 0.5
-            weight: 1
+    - url: http://{s}.tiles.mapbox.com/v3/openplans.NYC-footprints/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/openplans.map-2eefy58d/{z}/{x}/{y}.png
+    - url: http://{s}.tiles.mapbox.com/v3/openplans.153-Precincts/{z}/{x}/{y}.png
 
 place_types:
   Traffic_does_not_yield:
