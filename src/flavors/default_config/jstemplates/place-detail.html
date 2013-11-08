@@ -1,0 +1,32 @@
+{{> place-detail-promotion-bar }}
+
+<header class="place-header clearfix">
+  <h1>{{ place_type_label }}</h1>
+  <span class="place-submission-details">
+    {{#_}}<strong class="point-submitter">Identified by 
+      {{#if submitter}}
+        <img src="{{ submitter.avatar_url }}" class="avatar" /> {{ submitter.name }}
+      {{^}}
+        <!-- TODO: FIXME: don't hardcode image URL -->
+        <img src="/static/css/images/user-50.png" class="avatar" /> {{ submitter_name }}
+      {{/if}}</strong>{{/_}}
+  </span>
+</header>
+
+<section class="place-items">
+  {{# attachments }}
+  <div class="place-item place-attachment-{{ name }}">
+    <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
+  </div>
+  {{/ attachments }}
+  {{# items }}
+  <div class="place-item place-item-{{ name }}">
+    <span class="place-label place-label-{{ name }}">{{ label }}</span>
+    <p class="place-value place-value-{{ name }}">{{ value }}</p>
+  </div>
+  {{/ items }}
+</section>
+
+{{#survey_config}}
+<section class="survey"></section>
+{{/survey_config}}

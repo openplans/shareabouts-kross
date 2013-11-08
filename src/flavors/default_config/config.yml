@@ -22,7 +22,7 @@ map:
       lng: -73.96614074707031
     zoom: 15
     minZoom: 10
-    maxZoom: 17
+    maxZoom: 19
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -42,12 +42,9 @@ map:
             fillOpacity: 0.5
             weight: 1
 
-
-# The keys show up in the dropdown list when you are adding a new place
-# The values map the place type to map icons (defined below).
 place_types:
-  landmark:
-    label: _(Landmark)
+  Traffic_does_not_yield:
+    label: _(Traffic does not yield)
     rules:
       - condition: '"{{location_type}}" === "Traffic_does_not_yield"'
         icon:
@@ -57,107 +54,134 @@ place_types:
         focus_icon:
           iconUrl: /static/css/images/markers/marker-0d85e9.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
+          iconSize: [25,41]
+          shadowSize: [41,41]
           iconAnchor: [12, 41]
+  Bike_lane_blocked:
+    label: _(Bike lane blocked)
+    rules:
       - condition: '"{{location_type}}" === "Bike_lane_blocked"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/dot-4ab767.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          iconUrl: /static/css/images/markers/marker-4ab767.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
+          iconSize: [25,41]
+          shadowSize: [41,41]
           iconAnchor: [12, 41]
+  No_bike_lane:
+    label: _(No bike lane)
+    rules:
       - condition: '"{{location_type}}" === "No_bike_lane"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/dot-4bad92.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          iconUrl: /static/css/images/markers/marker-4bad92.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
+          iconSize: [25,41]
+          shadowSize: [41,41]
           iconAnchor: [12, 41]
+  Speeding_traffic:
+    label: _(Speeding traffic)
+    rules:
       - condition: '"{{location_type}}" === "Speeding_traffic"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/dot-744edc.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          iconUrl: /static/css/images/markers/marker-744edc.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
-          iconAnchor: [12, 41]      
+          iconSize: [25,41]
+          shadowSize: [41,41]
+          iconAnchor: [12, 41]   
+  Not_enough_time_to_cross:
+    label: _(Not enough time to cross)
+    rules:
       - condition: '"{{location_type}}" === "Not_enough_time_to_cross"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/dot-a542e5.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          iconUrl: /static/css/images/markers/marker-a542e5.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
+          iconSize: [25,41]
+          shadowSize: [41,41]
           iconAnchor: [12, 41]
+  Dangerous_crossing:
+    label: _(Dangerous crossing)
+    rules:
       - condition: '"{{location_type}}" === "Dangerous_crossing"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/dot-e644b7.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          iconUrl: /static/css/images/markers/marker-e644b7.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
+          iconSize: [25,41]
+          shadowSize: [41,41]
           iconAnchor: [12, 41]
+  Crosswalk_blocked:
+    label: _(Crosswalk blocked)
+    rules:
       - condition: '"{{location_type}}" === "Crosswalk_blocked"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/dot-f39914.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          iconUrl: /static/css/images/markers/marker-f39914.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
-          iconAnchor: [12, 41]    
+          iconSize: [25,41]
+          shadowSize: [41,41]
+          iconAnchor: [12, 41]   
+  Crosswalk_needs_painting:
+    label: _(Crosswalk needs painting)
+    rules:
       - condition: '"{{location_type}}" === "Crosswalk_needs_painting"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/triangle-0d85e9.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
           iconUrl: /static/css/images/markers/marker-0d85e9.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
+          iconSize: [25,41]
+          shadowSize: [41,41]
           iconAnchor: [12, 41]
+  Sidewalk_too_narrow:
+    label: _(Sidewalk too narrow)
+    rules:
       - condition: '"{{location_type}}" === "Sidewalk_too_narrow"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/triangle-2654d2.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          iconUrl: /static/css/images/markers/marker-2654d2.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
+          iconSize: [25,41]
+          shadowSize: [41,41]
           iconAnchor: [12, 41]
+  Double_parked_cars:
+    label: _(Double parked cars)
+    rules:
       - condition: '"{{location_type}}" === "Double_parked_cars"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconUrl: /static/css/images/markers/triangle-e1264d.png
           iconSize: [17,18]
           iconAnchor: [9, 9]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          iconUrl: /static/css/images/markers/marker-e1264d.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [17,18]
-          shadowSize: [17,18]
+          iconSize: [25,41]
+          shadowSize: [41,41]
           iconAnchor: [12, 41]
 
 activity:
@@ -171,7 +195,7 @@ place:
   add_button_label: _(Identify a problem)
   action_text: _(added)
   title: _(Describe the issue)
-  action_text: _(identified)
+  action_text: _(reported)
   anonymous_name: _(Someone)
   submit_button_label: _(Share this report)
   items:
@@ -255,8 +279,8 @@ survey:
 
 support:
   submission_type: support
-  submit_btn_text: _(Support This!)
-  action_text: supported
+  submit_btn_text: _(I agree!)
+  action_text: agreed
   anonymous_name: _(Someone)
 
 pages:
