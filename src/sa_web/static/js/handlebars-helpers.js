@@ -52,5 +52,7 @@ var Shareabouts = Shareabouts || {};
     return (this.name === 'submitter_name') ? options.fn(this) : options.inverse(this);
   });
 
+Handlebars.registerHelper('if_equal', function(val1, val2, options) {return val1 === val2 ? options.fn(this) : options.inverse(this);});
+
 
 }(Shareabouts));

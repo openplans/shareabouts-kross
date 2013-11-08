@@ -12,3 +12,33 @@
     s.parentNode.insertBefore(t, s);
   })();
 </script>
+
+<script type="text/javascript">
+  function canReadAsBinaryString() {
+    return !!(
+      window.FileReader && (new FileReader()).readAsBinaryString
+    );
+  }
+
+  $(Shareabouts).on('panelshow', function(evt, app, path) {
+    if (!canReadAsBinaryString()) {
+      $('.fileinput-container').hide();
+      $('label[for="place-my_image"]').hide();
+    }
+    
+});
+
+  $(document).ready(function() {
+    
+    if(window.location.pathname) {
+     var slug = window.location.pathname.split('/')[1];    
+     $("#filter-dropdown option[value='" + slug + "']").prop("selected", true);
+     };
+     
+     $( "#filter-dropdown" ).change(function() {
+       window.location.href = "http://" + window.location.host + "/" + this.value;
+     });
+     
+   });
+
+</script>

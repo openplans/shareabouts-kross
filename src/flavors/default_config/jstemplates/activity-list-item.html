@@ -1,5 +1,5 @@
-<li class="activity-item clearfix">
-  <a href="/place/{{ place.id }}">{{#_}}
+{{#_}}<li class="activity-item clearfix">
+  <a href="/place/{{ place.id }}">
 
     {{#if target.submitter}}
       <img src="{{ target.submitter.avatar_url }}" class="avatar" />
@@ -28,10 +28,7 @@
     
       {{ action }} on {{ place.place_type_label }} 
      {{#if place.name }} at <span class="place-name">{{ place.name }}</span> {{/if}}
-    {{/if }}
     
-  
-
-
-  {{/_}}</a>
-</li>
+    {{/if }}
+  </a>
+</li>{{/_}}
