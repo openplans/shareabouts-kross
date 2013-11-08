@@ -1,9 +1,18 @@
 {{> place-detail-promotion-bar }}
 
 <header class="place-header clearfix">
-  <h1>{{ place_type_label }}</h1>
+  <h1>{{ place_type_label }} {{#if name }} at {{ name }} {{/if }}</h1>
+  
+  <p>{{#if description }} {{ description }} {{/if }}</p>
+  
+  {{# attachments }}
+  <div class="place-item place-attachment-{{ name }}">
+    <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
+  </div>
+  {{/ attachments }}
+  
   <span class="place-submission-details">
-    {{#_}}<strong class="point-submitter">Identified by 
+    {{#_}}Reported by<strong class="point-submitter"> 
       {{#if submitter}}
         <img src="{{ submitter.avatar_url }}" class="avatar" /> {{ submitter.name }}
       {{^}}
@@ -14,17 +23,6 @@
 </header>
 
 <section class="place-items">
-  {{# attachments }}
-  <div class="place-item place-attachment-{{ name }}">
-    <img src="{{ file }}" class="place-value place-value-{{ name }}" alt="{{ name }}">
-  </div>
-  {{/ attachments }}
-  {{# items }}
-  <div class="place-item place-item-{{ name }}">
-    <span class="place-label place-label-{{ name }}">{{ label }}</span>
-    <p class="place-value place-value-{{ name }}">{{ value }}</p>
-  </div>
-  {{/ items }}
 </section>
 
 {{#survey_config}}
