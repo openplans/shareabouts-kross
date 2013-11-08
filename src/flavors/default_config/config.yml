@@ -20,8 +20,8 @@ map:
     center:
       lat: 40.68948969132277
       lng: -73.96614074707031
-    zoom: 15
-    minZoom: 10
+    zoom: 17
+    minZoom: 15
     maxZoom: 19
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
@@ -48,141 +48,161 @@ place_types:
     rules:
       - condition: '"{{location_type}}" === "Traffic_does_not_yield"'
         icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   Bike_lane_blocked:
     label: _(Bike lane blocked)
     rules:
       - condition: '"{{location_type}}" === "Bike_lane_blocked"'
         icon:
-          iconUrl: /static/css/images/markers/dot-4ab767.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-4ab767.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   No_bike_lane:
     label: _(No bike lane)
     rules:
       - condition: '"{{location_type}}" === "No_bike_lane"'
         icon:
-          iconUrl: /static/css/images/markers/dot-4bad92.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-4bad92.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   Speeding_traffic:
     label: _(Speeding traffic)
     rules:
       - condition: '"{{location_type}}" === "Speeding_traffic"'
         icon:
-          iconUrl: /static/css/images/markers/dot-744edc.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-744edc.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]   
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   Not_enough_time_to_cross:
     label: _(Not enough time to cross)
     rules:
       - condition: '"{{location_type}}" === "Not_enough_time_to_cross"'
         icon:
-          iconUrl: /static/css/images/markers/dot-a542e5.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-a542e5.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   Dangerous_crossing:
     label: _(Dangerous crossing)
     rules:
       - condition: '"{{location_type}}" === "Dangerous_crossing"'
         icon:
-          iconUrl: /static/css/images/markers/dot-e644b7.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-e644b7.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   Crosswalk_blocked:
     label: _(Crosswalk blocked)
     rules:
       - condition: '"{{location_type}}" === "Crosswalk_blocked"'
         icon:
-          iconUrl: /static/css/images/markers/dot-f39914.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-f39914.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]   
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   Crosswalk_needs_painting:
     label: _(Crosswalk needs painting)
     rules:
       - condition: '"{{location_type}}" === "Crosswalk_needs_painting"'
         icon:
-          iconUrl: /static/css/images/markers/triangle-0d85e9.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   Sidewalk_too_narrow:
     label: _(Sidewalk too narrow)
     rules:
       - condition: '"{{location_type}}" === "Sidewalk_too_narrow"'
         icon:
-          iconUrl: /static/css/images/markers/triangle-2654d2.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-2654d2.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
   Double_parked_cars:
     label: _(Double parked cars)
     rules:
       - condition: '"{{location_type}}" === "Double_parked_cars"'
         icon:
-          iconUrl: /static/css/images/markers/triangle-e1264d.png
-          iconSize: [17,18]
-          iconAnchor: [9, 9]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
         focus_icon:
-          iconUrl: /static/css/images/markers/marker-e1264d.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25,41]
-          shadowSize: [41,41]
-          iconAnchor: [12, 41]
+          iconUrl: /static/css/images/cone.png
+          shadowUrl: /static/css/images/shadow-square-white.png
+          iconSize: [31, 32]
+          shadowSize: [31, 32]
+          iconAnchor: [16, 25]
 
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
@@ -192,7 +212,7 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Identify a problem)
+  add_button_label: _(Report a problem)
   action_text: _(added)
   title: _(Describe the issue)
   action_text: _(reported)
@@ -207,7 +227,7 @@ place:
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(What is the problem here?)
+    - prompt: _(What is the problem at this location?)
       type: select
       name: location_type
       options:
@@ -231,7 +251,7 @@ place:
           value: Sidewalk_too_narrow
         - label: _(Double parked cars/trucks)
           value: Double_parked_cars
-    - prompt: _(Location Name)
+    - prompt: _(Intersection or street name)
       type: text
       name: name
       attrs:
@@ -245,15 +265,7 @@ place:
       attrs:
         - key: placeholder
           value: _(Optionally, tell us more about this location...)
-    - prompt: _(Share an image showing the problem)
-      inputfile_label: _(Add an image)
-      type: file
-      name: my_image
-      optional: true
-      attrs:
-        - key: accept
-          value: image/*
-
+          
 survey:
   submission_type: comments
 

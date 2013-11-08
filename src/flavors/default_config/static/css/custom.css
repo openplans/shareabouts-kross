@@ -29,25 +29,30 @@ a:hover {
 -------------------------------------------------------------- */
 
 #site-header {
-  color: #444;
   background-color: #fff;
+  color: #000;
 }
+
 #site-title {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   text-shadow: none;
+  color: #000;
 }
+
 #site-title a:link,
 #site-title a:visited {
   font-size: 2em;
   display: block;
   height: 100%;
   position: relative;
-  color: #444;
+  color: #000;
 }
+
 #site-title a:hover {
   color: #000;
 }
+
 #site-logo {
   height: 100%;
   width: auto;
@@ -56,9 +61,9 @@ a:hover {
   top: 0;
   left: 0.25em;
 }
+
 #site-tagline {
    display: none; 
-}
 }
 
 
@@ -71,20 +76,18 @@ a:hover {
 
 #site-title {
   font-family: "Arial", sans-serif;
-  color: #fff;
   text-shadow: none;
 }
 
-#site-title a:link,
-#site-title a:visited {
-/*  font-size: 0.75em;*/
-/*  color: #fff;*/
+.access a:visited, 
+.access a:active, 
+.access a:link {
+  color: #000 !important;
 }
-
-#site-title a:hover {
-/*  color: #fff;*/
+.access a:hover {
+  background: #000 !important;
+  color: #fff !important;
 }
-
 
 /* =Mobile Navigation Button
 -------------------------------------------------------------- */
