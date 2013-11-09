@@ -1,4 +1,3 @@
-<h4 class="">{{ place_config.title }}</h4>
 
 <p>{{ place_config.help_text }}</p>
 
@@ -7,27 +6,27 @@
   <fieldset>
     <input type="hidden" name="visible" value="on">
 
-    <!-- TODO We need user data in the template to know whether a user
-              is already logged in.
-      -->
-
     {{# place_config.items }}
     <p>
-      {{#is_authenticated}}
         {{^is_submitter_name}}
         <label for="place-{{ name }}">{{ prompt }} {{# optional }}(optional){{/ optional }}</label>
         {{/is_submitter_name}}
-      {{^}}
-      <label for="place-{{ name }}">{{ prompt }} {{# optional }}(optional){{/ optional }}</label>
-      {{/is_authenticated}}
 
       {{#if is_input}}
         {{#is_submitter_name}}
           {{#is_authenticated}}
+          
+          <h4 class="">What is the problem at this location?</h4>
+          
           {{^}}
             <span class="or-sign-in">Sign in with <a class="auth-inline twitter-btn" href="/users/login/twitter/">Twitter</a> <a class="auth-inline facebook-btn" href="/users/login/facebook/">Facebook</a></span>
             
-            Or enter your name <input id="place-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
+            <br/>...or enter your name <br/> <input id="place-{{ name }}" name="{{ name }}" type="{{ type }}" {{#attrs}} {{ key }}="{{ value }}"{{/attrs}}>
+            
+            <hr/>
+            
+            <h4 class="">What is the problem at this location?</h4>
+            
                                 
           {{/is_authenticated}}
         {{^}}

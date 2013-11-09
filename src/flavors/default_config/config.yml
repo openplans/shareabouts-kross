@@ -215,7 +215,7 @@ place:
           value: _(Name)
         - key: size
           value: 30
-    - prompt: _(What is the problem at this location?)
+    - prompt: _(Pick one)
       type: select
       name: location_type
       options:
@@ -287,7 +287,7 @@ pages:
   - title: _(About)
     slug: about
     name: overview
-    start_page: false
+    start_page: true
     
   - title: _(Resources)
     slug: resources
