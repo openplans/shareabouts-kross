@@ -4,8 +4,25 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-45574844-1', 'makebrooklynsafer.org');
+   ga('create', 'UA-45574844-1', 'makebrooklynsafer.org');
+  
+  // localhost only
+  // ga('create', 'UA-45574844-1', { 
+  //  'cookieDomain': 'none'
+  //});
+  
   ga('send', 'pageview');
+  
+  (function(S) {
+
+    // logging panel actions
+    $(S).on('panelshow', function(evt, app, path) {
+      
+      panelTitle = $('#content h1:first').text();
+      ga('send', 'event', 'Place report', 'View', panelTitle);
+      
+    });
+  }(Shareabouts));
 
 </script>
 
